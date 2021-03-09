@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, {FC} from 'react';
 import Article from './Article';
 import Slider from './Slider';
@@ -7,10 +8,10 @@ interface ArticlesProps {
   articles: any[];
 }
 const sliderProps = {
-  maxVisibleSlides: 3,
+  maxVisibleSlides: 5,
   pageTransition: 250,
-  slideMargin: 15,
-  zoomFactor: 1,
+  slideMargin: 1,
+  zoomFactor: 2,
 };
 
 const RecentlyPosted: FC<ArticlesProps> = ({articles}) => {
@@ -20,11 +21,13 @@ const RecentlyPosted: FC<ArticlesProps> = ({articles}) => {
         <h3 className="RecentlyPosted__header">Recently Posted</h3>
         <div className="RecentlyPosted__article">
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          <Slider {...sliderProps}>
-            {articles.map((article) => (
-              <Article key={article} article={article} />
-            ))}
-          </Slider>
+          <div>
+            <Slider {...sliderProps}>
+              {articles.map((article) => (
+                <Article key={article} article={article} />
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
     </div>

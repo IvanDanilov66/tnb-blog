@@ -10,7 +10,7 @@ const Blog: FC = () => {
     <>
       <PageTitle title="blog" />
       <BlogHero />
-      <RecentlyPosted articles={[1, 2, 3, 4, 5]} />
+      <RecentlyPosted articles={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} />
       <Subscribe />
     </>
   );
